@@ -4,7 +4,7 @@
 This is a step-by-step tutorial of how to set up a Python environment for EC2 server.
 
 
-## Sign In
+## 1. Sign In
 You can either access through root user or through IAM role. For users just signed up, we can only login through as root user by clicking "Sign in using root user email" below:
 
 ![alt text](imgs/aws1_tut_markdown.010.jpeg)
@@ -21,7 +21,7 @@ Finally, hit "Sign in".
 ![alt text](imgs/aws1_tut_markdown.012.jpeg)
 
 
-## Create first AWS EC2 instance
+## 2. Create first AWS EC2 instance
 
 After signed in, choose "Service", then click "All services"
 
@@ -118,7 +118,7 @@ You can just type Linux commands you know. For example, "pwd" for passwords. "ex
 
 ![alt text](imgs/aws1_tut_markdown.033.jpeg)
 
-## Set up Python environment
+## 3. Set up Python environment
 
 Let's login again using ssh command to set up the remote server. First, we just update the related packages using the command "sudo apt update" and "sudo apt-get update".
 
@@ -134,9 +134,11 @@ Type "python3" to enter python page. We can now see that the python version is u
 
 ![alt text](imgs/aws1_tut_markdown.036.jpeg)
 
-Run the command "python3 -m venv venv" to run the "venv" module to create a new environment called "venv" in a new folder called "venv". The environment is "virtual", meaning that we can activate it or deactivate it, and all the code in within the "venv" folder.
+Run the command `python3 -m venv venv` to run the "venv" module to create a new environment called "venv" in a new folder called "venv". The environment is "virtual", meaning that we can activate it or deactivate it, and all the code in within the "venv" folder.
 
 ![alt text](imgs/aws1_tut_markdown.037.jpeg)
+
+## 4. Set up Jupyter-lab server for remote access
 
 We can use `source venv/bin/activate` to activate the virtual Python environment we just created. After that, we want to install jupyter-lab within the environment using `pip install jupyterlab`. We try to establish a Jupyter-lab server for our development.
 
@@ -175,7 +177,7 @@ It is also easy to stop the server. After SSH into the remote EC2, we can enter 
 ![alt text](imgs/aws1_tut_markdown.046.jpeg)
 
 
-## Use Visio Studio Code to SSH the system
+## 5. Use Visio Studio Code to SSH the EC2 server
 
 Another way of using Python in remote machine is by connecting using the VS Code editor by installing the extention called "Remote - SSH". You need to enable this extention.
 
@@ -216,9 +218,8 @@ If we open terminal, we can see that the terminal is also ssh connected.
 ![alt text](imgs/aws1_tut_markdown.055.jpeg)
 
 
-
-
 ## Close and manage instance
+
 Let's close our instance to avoid unexpected fees for now. Click on "Instances (running)" to view all running instances. 
 
 ![alt text](imgs/aws1_tut_markdown.056.jpeg)
